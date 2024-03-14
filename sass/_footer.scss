@@ -1,0 +1,195 @@
+.footer {
+    position: relative;
+    background: $Very-Dark-Blue;
+    padding: rem(60);
+    z-index: 2;
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-left: 6px;
+
+        @include breakpointDown(tablet) {
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0;
+        }
+
+        .logo {
+            margin-bottom: rem(80);
+        }
+
+        @include breakpointDown(tablet) {
+            .order-3 {
+                order: 3;
+                display: flex;
+                flex-direction: column;
+
+                .logo {
+                    order: 2;
+                    text-align: center;
+                    margin: rem(40) 0;
+                }
+            }
+
+            .social-flex {
+                order: 1;
+            }
+
+            .order-2 {
+                order: 2;
+            }
+
+            .order-1 {
+                display: flex;
+                flex-direction: column;
+
+                form {
+                    order: 1;
+                }
+            }
+
+        }
+
+        .social-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: rem(13);
+            transition: fill 300ms ease-in-out;
+
+            @include breakpointDown(tablet) {
+                margin-bottom: rem(30);
+                gap: rem(40);
+
+                @include breakpointDown(mobile) {
+                    gap: rem(20)
+                }
+            }
+
+            .fa-brands {
+                transition: 300ms ease-in-out;
+                color: $Very-Light-Gray;
+
+                @include breakpointDown(tablet) {
+                    font-size: rem(40);
+                }
+
+            }
+
+            a {
+                &:hover {
+
+                    .fa-brands {
+                        color: $Bright-Red;
+                    }
+                }
+            }
+        }
+
+        .flex-link {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: rem(166);
+
+            @include breakpointDown(tablet) {
+                margin-bottom: rem(30);
+            }
+
+            @include breakpointDown(mobile) {
+                gap: rem(100)
+            }
+
+            li {
+                padding: rem(7) 0;
+
+                a {
+                    color: $Very-Light-Gray;
+                    transition: 300ms ease-in-out;
+
+                    &:hover {
+                        color: $Bright-Red;
+                    }
+                }
+            }
+        }
+
+        form {
+            margin-bottom: rem(62);
+
+            @include breakpointDown(tablet) {
+                width: 100%;
+                display: flex;
+
+                input {
+                    padding-right: rem(30) !important;
+                }
+
+                .btn {
+                    padding: rem(14) rem(30) !important;
+                }
+            }
+
+            input {
+                display: inline-block;
+                padding: rem(14) rem(20);
+                background: $Very-Light-Gray;
+                color: $Bright-Red;
+                border: none;
+                border-radius: rem(20);
+                margin-right: rem(10);
+                outline: none;
+                font-size: rem(14);
+
+
+            }
+
+            ::placeholder {
+                color: $Very-Dark-Blue;
+                font-size: rem(12);
+            }
+
+            .btn {
+                padding: rem(14) rem(20);
+            }
+
+            .error {
+                color: $Bright-Red;
+                font-size: rem(10);
+                padding-left: rem(20);
+                padding-top: rem(10);
+            }
+        }
+
+    }
+
+    p {
+        font-size: rem(14);
+        font-weight: 700;
+        text-align: right;
+        margin-top: rem(-60);
+
+        @include breakpointDown(tablet) {
+            text-align: center;
+            margin-top: 0;
+        }
+    }
+
+    .attribution {
+        color: $Bright-Red;
+        text-align: center;
+
+        a {
+            color: $Very-Pale-Red;
+            transition: color 0.4s ease-in;
+
+            &:hover {
+                color: $Bright-Red;
+            }
+        }
+    }
+
+
+}

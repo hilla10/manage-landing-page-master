@@ -1,0 +1,36 @@
+@include breakpointDown(mobile) {
+    .hamburger {
+        cursor: pointer;
+
+        .bar {
+            position: relative;
+            right: 0;
+            top: 0;
+            width: rem(30);
+            height: rem(4);
+            margin: rem(4) 0;
+            background: $Very-Dark-Blue;
+            transition: all .5s cubic-bezier(.46, .03, .52, .96);
+        }
+
+        &.active {
+            .bar {
+                &:first-child {
+                    transform: rotate(130deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    width: 0;
+                }
+
+                &:last-child {
+                    transform: rotate(-140deg) translate(10px, 12px);
+                }
+            }
+
+
+        }
+
+    }
+}

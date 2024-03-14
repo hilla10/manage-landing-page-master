@@ -1,0 +1,274 @@
+.main {
+    position: relative;
+    z-index: 2;
+
+    .intro__section {
+        margin-bottom: rem(100);
+
+        p {
+            width: 64%;
+        }
+
+        .intro-header {
+            margin-top: rem(64);
+        }
+
+        .intro-illustration {
+            margin-right: -20px;
+
+            @include breakpointDown(mobile) {
+                margin-right: 0;
+
+                img {
+                    Width: 100%;
+                }
+            }
+
+        }
+
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include breakpointDown(tablet) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+
+            .intro-illustration {
+                order: 1;
+            }
+
+            .intro-header {
+                order: 2;
+                z-index: 3;
+            }
+        }
+    }
+
+    .manage__section {
+        margin-bottom: rem(106);
+
+        .flex {
+            position: relative;
+            z-index: 10;
+            gap: rem(60);
+
+            .right-flex {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: rem(26);
+
+                @include breakpointDown(tablet) {
+                    text-align: left;
+                    gap: 0;
+                }
+
+                .track-number {
+                    padding: rem(10) rem(25);
+                    background: $Bright-Red;
+                    border-radius: rem(20);
+                    margin-top: rem(-5);
+
+                    @include breakpointDown(tablet) {
+                        margin-top: 3px;
+                        transform: translateX(rem(68));
+
+                        @include breakpointDown(mobile) {
+                            transform: translateX(0);
+                            position: relative;
+                            z-index: 2;
+                        }
+
+                    }
+                }
+
+                .right-content {
+                    margin-top: rem(4);
+                    margin-bottom: rem(-5);
+
+                    @include breakpointDown(mobile) {
+                        transform: translateX(rem(-66));
+                    }
+
+                    .bg-title {
+                        @include breakpointDown(tablet) {
+                            background: $Very-Pale-Red;
+                            padding: rem(10);
+                            border-radius: rem(30);
+                            margin-bottom: rem(10);
+
+                            h3 {
+                                padding-bottom: 0;
+                                padding-left: rem(84);
+
+                                @include breakpointDown(mobile) {
+                                    padding-left: rem(40);
+                                }
+                            }
+                        }
+
+                        @include breakpointDown(mobile) {
+                            transform: translateX(30px);
+                            width: 117%;
+                        }
+
+
+                    }
+                }
+
+                p {
+                    line-height: 1.7;
+                    width: 100%;
+                }
+            }
+
+
+            .manage-right {
+                width: 105%;
+            }
+
+            .manage-left {
+                p {
+                    width: 65%;
+                }
+            }
+        }
+    }
+
+    .manage-img {
+        position: absolute;
+        bottom: rem(404);
+        left: -40vw;
+        // z-index: 5;
+        background: url('../images/bg-tablet-pattern.svg');
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        height: 820px;
+        width: 100%;
+
+        @include breakpointDown(desktop) {
+            top: 94vh;
+            height: 605px;
+            background-size: contain;
+            left: -28vw;
+        }
+
+        @include breakpointDown(tablet) {
+            left: 56vw;
+            top: 29vh;
+            height: 500px;
+        }
+    }
+
+    .testimonial__section {
+        text-align: center;
+        margin-bottom: rem(104);
+
+        h2 {
+            padding-bottom: rem(111);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            align-items: flex-start;
+            gap: rem(40);
+
+            @include breakpointDown(tablet) {
+                grid-template-columns: 1fr;
+                row-gap: rem(80);
+            }
+
+            img {
+                width: rem(70);
+            }
+        }
+
+        .btn {
+            margin-top: rem(40);
+            box-shadow: 2px 2px 6px $Bright-Red;
+        }
+
+        .testimonial-content {
+            position: relative;
+            background: $Very-Light-Gray;
+            padding: rem(30) rem(20);
+            height: 100%;
+
+            .avatar {
+                transform: translateX(-50%);
+                position: absolute;
+                top: rem(-34);
+                left: 50%;
+                z-index: 100 !important;
+            }
+
+            h3 {
+                padding-top: rem(32);
+            }
+        }
+
+    }
+
+    .team-section {
+        position: relative;
+        background: $Bright-Red;
+        height: rem(220);
+        padding: rem(65) 0;
+
+        @include breakpointDown(mobile) {
+            height: auto;
+        }
+
+        h2 {
+            color: $Very-Light-Gray;
+            width: 50%;
+
+            @include breakpointDown(mobile) {
+                width: 100%;
+                margin-bottom: rem(30);
+            }
+        }
+
+        .flex {
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: url('../images/bg-simplify-section-desktop.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 17vw -6vh;
+            width: 100%;
+            height: rem(500);
+
+            @include breakpointDown(tablet) {
+                background-size: cover;
+                background-position: -24vw -8vh;
+                height: rem(345);
+            }
+
+            @include breakpointDown(mobile) {
+                background: url('../images/bg-simplify-section-mobile.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: rem(400);
+                background-position: 0vh 1vh;
+                width: 100%;
+            }
+        }
+    }
+
+}
